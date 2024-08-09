@@ -14,9 +14,9 @@ const Home = () => {
 
   const fetchImages = () => {
     axios
-      .get(`https://fakestoreapi.com/products?limit=9`)
+      .get(`https://picsum.photos/v2/list?limit=9`)
       .then((res) => {
-        const imageDatas: string[] = res?.data.map((curr: any) => curr?.image);
+        const imageDatas: string[] = res?.data.map((curr: any) => curr?.download_url);
         setImages(imageDatas);
       })
       .catch((err) => console.log(err));
